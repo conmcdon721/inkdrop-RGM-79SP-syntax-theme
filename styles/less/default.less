@@ -4,11 +4,11 @@
 
   .CodeMirror {
     // Background color of main window
-    background-color: @base00;
+    background-color: @sniper00;
   }
   .CodeMirror-scroll, .CodeMirror-dialog {
     // Color of otherwise un-styled text
-    color: @base01;
+    color: @sniper01;
   }
   .CodeMirror-gutters {
     // Gutter to the left
@@ -17,54 +17,61 @@
   }
   .CodeMirror-linenumber {
     // Line numbers in the gutter
-    color: @base06;
+    color: @sniper02;
   }
   .CodeMirror-selected {
-    // Highlighed text
-    background-color: @base06;
+    // Selected text i.e. text the cursor was dragged over.
+    background-color: @sniper04;
   }
   .CodeMirror-focused .CodeMirror-selected {
-    // Highlighed text
-    background-color: @base07;
+    // Same as before, but in focused mode?
+    background-color: @sniper04;
   }
   .CodeMirror-cursor {
     // The cursor
-    border-left: 1px solid @base06;
+    border: none;
+    background: @sniper04 !important;
+    width: auto;
+  }
+  div.CodeMirror-cursors {
+    z-index: 0 !important;
   }
   .CodeMirror-matchingbracket,
   .CodeMirror-matchingtag {
     // When you click a tag/bracket and the matching one is highlighted
-    background: @base02 !important;
-    color: @base06 !important;
-    border-bottom: 1px solid @base08 !important;
+    background: rgba(0, 0, 0, 0.1) !important;
+    color: @sniper03 !important;
+    border-bottom: 1px solid @sniper03 !important;
   }
   .CodeMirror-foldgutter-open:after {
     // Those little arrows in the gutter
-    color: @base03;
+    color: @sniper01;
   }
   .CodeMirror-foldgutter-folded:after {
     // The arrows after you collapse code
-    color: @base04;
+    color: @sniper01;
   }
   .CodeMirror.over-gutter,
   .CodeMirror-activeline {
     .CodeMirror-foldgutter-open:after {
       // Arrows when hovering on the gutter
-      color: @base06;
+      color: @sniper03;
     }
   }
   .CodeMirror-foldmarker {
     // The [...] marking collapsed code
-    border-color: @base06;
-    background-color: @base06;
-    color: @base02;
+    border-color: @sniper02;
+    background-color: @sniper03;
+    color: @sniper04;
   }
   .CodeMirror .CodeMirror-linewidget img.inline-widget {
     background: rgba(0,0,0,0.1);
   }
   .cm-searching {
-    // Ctrl + F results
-    background-color: rgba(165, 69, 67, .4);
+    // Ctrl + F results AND Search bar results.
+    // Same hard coding necessary as before. Probably something to do
+    // with how LESS handles the background-color property.
+    background-color: rgba(61, 00, 07, 0.5);
     color: white !important;
   }
 
@@ -72,89 +79,89 @@
 
   .CodeMirror {
     .cm-url {
-      color: @base0F;
+      color: @sniper04;
     }
     .cm-atom,
     .cm-formatting-list.cm-variable-3,
     .cm-string,
     .cm-string-2,
     .cm-hr {
-      color: @base0B;
+      color: @sniper02;
     }
     .cm-number,
     .cm-attribute,
     .cm-plus {
-      color: @base0A;
+      color: @sniper02;
     }
     .cm-def,
     .cm-property {
-      color: @base0C;
+      color: @sniper04;
     }
     .cm-variable {
-      color: @base06;
+      color: @sniper03;
     }
     .cm-keyword,
     .cm-formatting-list.cm-variable-2,
     .cm-operator,
     .cm-meta,
     .cm-bracket {
-      color: @base0E;
+      color: @sniper03;
     }
     .cm-comment {
-      color: @base06;
+      color: white;
       font-style: italic;
     }
     .cm-error,
     .cm-minus {
-      color: @base09;
+      color: @sniper02;
     }
     .cm-formatting-header {
       opacity: 0.3;
     }
     .cm-header {
-      color: @base01;
+      color: @sniper02;
     }
     .cm-link {
-      color: @base0F;
+      color: @sniper04;
       text-underline-position: under;
     }
     .cm-rangeinfo {
-      color: @base0C;
+      color: @sniper00;
     }
     .cm-builtin {
-      color: @base0F;
+      color: @sniper00;
     }
     .cm-qualifier,
     .cm-tag {
-      color: @base0A;
+      color: @sniper04;
     }
     .cm-quote {
-      color: @base0E;
+      color: @sniper04;
       font-style: italic;
     }
     .cm-whitespace::before {
-      color: @base06;
+      color: @sniper01;
       opacity: 0.4;
     }
     .cm-formatting-quote, .cm-formatting-strong, .cm-formatting-em {
       opacity: 0.6;
     }
     .cm-strong {
-      color: @base0A;
+      color: white;
     }
     .cm-em {
-      color: @base0D;
+      color: @sniper02;
     }
 
     // carriage return
     .CodeMirror-code > div > pre > span::after, .CodeMirror-line > span::after {
-      color: @base06;
+      color: @sniper00;
       opacity: 0.4;
     }
 
     .cm-inline-code {
       background: rgba(0, 0, 0, 0.1);
-      color: @base03;
+      color: @sniper01;
     }
 
     .gfm-codeblock-bg.CodeMirror-linebackground {
@@ -162,12 +169,12 @@
     }
 
     .cm-table-sep, .table-row.table-row-1 {
-      color: @base0E;
+      color: @sniper02;
     }
   }
 
   /* Active Line Highlight support */
   .CodeMirror-activeline-background, .CodeMirror-activeline-gutter {
-    background-color: fade(@base02, 10%) !important;
+    background-color: fade(@sniper00, 10%) !important;
   }
 }
