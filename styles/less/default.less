@@ -8,41 +8,40 @@
   }
   .CodeMirror-scroll, .CodeMirror-dialog {
     // Color of otherwise un-styled text
-    color: @sniper01;
+    color: @sniper03;
   }
   .CodeMirror-gutters {
     // Gutter to the left
-    background-color: transparent;
+    background-color: @sniper01;
     border-right: 1px solid rgba(255, 255, 255, 0.1);
   }
   .CodeMirror-linenumber {
     // Line numbers in the gutter
-    color: @sniper02;
+    color: @sniper03;
   }
   .CodeMirror-selected {
     // Selected text i.e. text the cursor was dragged over.
-    background-color: @sniper04;
+    background-color: @sniper07;
   }
   .CodeMirror-focused .CodeMirror-selected {
-    // Same as before, but in focused mode?
-    background-color: @sniper04;
+    // Selected text i.e. text the cursor was dragged over when you
+    // click outside of the editor.
+    background-color: @sniper07;
   }
   .CodeMirror-cursor {
     // The cursor
-    border: none;
-    background: @sniper04 !important;
-    width: auto;
-  }
-  div.CodeMirror-cursors {
-    z-index: 0 !important;
+    border-left: 1px solid @sniper07;
   }
   .CodeMirror-matchingbracket,
   .CodeMirror-matchingtag {
-    // When you click a tag/bracket and the matching one is highlighted
+    // When you position your cursor next to a tag/bracket and the
+    // corresponding ending tag/bracket is highlighted
     background: rgba(0, 0, 0, 0.1) !important;
-    color: @sniper03 !important;
-    border-bottom: 1px solid @sniper03 !important;
+    color: @sniper06 !important;
+    border-bottom: 1px solid @sniper06 !important;
   }
+  /* Removed this chunk because I don't use code-fold
+
   .CodeMirror-foldgutter-open:after {
     // Those little arrows in the gutter
     color: @sniper01;
@@ -64,22 +63,22 @@
     background-color: @sniper03;
     color: @sniper04;
   }
+  
+  */
   .CodeMirror .CodeMirror-linewidget img.inline-widget {
     background: rgba(0,0,0,0.1);
   }
   .cm-searching {
     // Ctrl + F results AND Search bar results.
-    // Same hard coding necessary as before. Probably something to do
-    // with how LESS handles the background-color property.
-    background-color: rgba(61, 00, 07, 0.5);
-    color: white !important;
+    background-color: @sniper08;
+    color: @sniper03 !important;
   }
 
   /* All 'dem swatches */
 
   .CodeMirror {
     .cm-url {
-      color: @sniper04;
+      color: @sniper05;
     }
     .cm-atom,
     .cm-formatting-list.cm-variable-3,
@@ -91,14 +90,14 @@
     .cm-number,
     .cm-attribute,
     .cm-plus {
-      color: @sniper02;
+      color: @sniper06;
     }
     .cm-def,
     .cm-property {
-      color: @sniper04;
+      color: @sniper05;
     }
     .cm-variable {
-      color: @sniper03;
+      color: @sniper02;
     }
     .cm-keyword,
     .cm-formatting-list.cm-variable-2,
@@ -113,7 +112,7 @@
     }
     .cm-error,
     .cm-minus {
-      color: @sniper02;
+      color: @sniper04;
     }
     .cm-formatting-header {
       opacity: 0.3;
@@ -122,21 +121,21 @@
       color: @sniper02;
     }
     .cm-link {
-      color: @sniper04;
+      color: @sniper05;
       text-underline-position: under;
     }
     .cm-rangeinfo {
-      color: @sniper00;
+      color: @sniper02;
     }
     .cm-builtin {
-      color: @sniper00;
+      color: @sniper02;
     }
     .cm-qualifier,
     .cm-tag {
       color: @sniper04;
     }
     .cm-quote {
-      color: @sniper04;
+      color: @sniper08;
       font-style: italic;
     }
     .cm-whitespace::before {
@@ -155,13 +154,12 @@
 
     // carriage return
     .CodeMirror-code > div > pre > span::after, .CodeMirror-line > span::after {
-      color: @sniper00;
-      opacity: 0.4;
+      color: @sniper06;
     }
 
     .cm-inline-code {
       background: rgba(0, 0, 0, 0.1);
-      color: @sniper01;
+      color: @sniper02;
     }
 
     .gfm-codeblock-bg.CodeMirror-linebackground {
@@ -169,12 +167,12 @@
     }
 
     .cm-table-sep, .table-row.table-row-1 {
-      color: @sniper02;
+      color: @sniper05;
     }
   }
 
   /* Active Line Highlight support */
   .CodeMirror-activeline-background, .CodeMirror-activeline-gutter {
-    background-color: fade(@sniper00, 10%) !important;
+    background-color: fade(@sniper08, 10%) !important;
   }
 }
